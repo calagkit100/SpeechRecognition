@@ -41,9 +41,9 @@ stopBtn.addEventListener("click", () => {
 });
 
 
-sendbutton.onclick = async() => {
+startBtn.onclick = async() => {
 
-    const value = transcript
+    const value = input.value
     const res = await fetch("http://localhost:3000/complete", {
         body: JSON.stringify({
             query: value
@@ -54,4 +54,9 @@ sendbutton.onclick = async() => {
         }
     })
     const data = await res.json()
+};
+
+function speakThis(transcript) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.data
 };
